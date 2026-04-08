@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FeedOfMoments 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>FeedOfMoments.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A5AAACDE2F86F7FA00DB0347</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5AAACED2F86F7FA00DB0347</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5AAACF72F86F7FA00DB0347</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
