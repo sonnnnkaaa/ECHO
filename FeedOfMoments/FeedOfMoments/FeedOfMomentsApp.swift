@@ -25,7 +25,7 @@ struct FeedOfMomentsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TwoColumnGridView()
+            FeedGridView()
         }
         .modelContainer(sharedModelContainer)
     }
