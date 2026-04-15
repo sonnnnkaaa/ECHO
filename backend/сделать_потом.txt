@@ -1,0 +1,11 @@
+сделать потом:
+
+в schemas/user.py сделать проверку на то что nickname содержит только EN символы и _
+добавить пароль клиента в models, schemas и тд
+
+https://habr.com/ru/articles/848592/ - sqlalchemy
+https://pydantic.dev/docs/validation/1.10/usage/types - pydantic
+https://habr.com/ru/articles/919588/ - roadmap
+https://habr.com/ru/articles/1015148/ - auth fastapi
+
+
