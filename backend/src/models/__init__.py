@@ -1,5 +1,6 @@
 from .base import Base
 from .checklist_category import ChecklistCategory
+from .checklist_checklist_category import ChecklistChecklistCategory
 from .checklist_item import ChecklistItem
 from .checklist import Checklist
 from .comment import Comment
@@ -10,5 +11,6 @@ from .user_progress import UserProgress
 from .user import User
 
 
-__all__ = ["Base", "ChecklistCategory", "ChecklistItem", "Checklist", "Comment", 
-           "Favorite", "Like", "Post", "UserProgress", "User"]
+__all__ = ["Base", "ChecklistCategory", "ChecklistChecklistCategory", 
+           "ChecklistItem", "Checklist", "Comment", "Favorite", 
+           "Like", "Post", "UserProgress", "User"]

@@ -1,7 +1,9 @@
 сделать потом:
 
 в schemas/user.py сделать проверку на то что nickname содержит только EN символы и _
-добавить пароль клиента в models, schemas и тд
+добавить пароль клиента в models и тд
+подумать нужна ли эта конструкция в ListResponse (schemas)
+подумать нужно ли убрать гдето в schemas update или куда то наоборот добавить
 
 https://habr.com/ru/articles/848592/ - sqlalchemy
 https://pydantic.dev/docs/validation/1.10/usage/types - pydantic
