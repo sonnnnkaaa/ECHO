@@ -13,7 +13,7 @@ class User(Base):
 
     Columns:
         id: Post identifier (PRIMARY KEY, UNIQUE, NOT NULL)
-        nickname: User's nickname (UNIQUE, NOT NULL)
+        username: Username (UNIQUE, NOT NULL)
         created_at: Date and time of account creation (NOT NULL)
         email: User's email (NOT NULL)
         avatar_url: User's avatar URL (OPTIONAL)
@@ -21,7 +21,7 @@ class User(Base):
     __tablename__ = "user"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    nickname: Mapped[str] = mapped_column(String(30), unique=True)
+    username: Mapped[str] = mapped_column(String(30), unique=True)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     email: Mapped[str] = mapped_column(String(), unique=True)
     avatar_url: Mapped[Optional[str]] = mapped_column(String())

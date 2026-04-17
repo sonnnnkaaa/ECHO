@@ -1,6 +1,5 @@
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
-from sqlalchemy import String
 from sqlalchemy import TIMESTAMP, func
 from sqlalchemy import ForeignKey
 from typing import Optional
@@ -19,7 +18,7 @@ class Checklist(Base):
         created_at: Date and time of checklist creation (NOT NULL)
         description: Checklist description (OPTIONAL)
         author_id: Checklist author identifier (FOREIGN KEY user(id), NOT NULL)
-        category_id: Checklist category identifier (FOREIGN KEY checklist_category(id), NOT NULL)
+        checklist_checklist_category_id: Identifier of the checklist and category connection (FOREIGN KEY checklist_checklist_category(id), NOT NULL)
     """
     __tablename__ = "checklist"
 
@@ -29,4 +28,4 @@ class Checklist(Base):
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     description: Mapped[Optional[str]] = mapped_column()
     author_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
-    category_id: Mapped[int] = mapped_column(ForeignKey("Category.id"))
+    checklist_checklist_category_id: Mapped[int] = mapped_column(ForeignKey("ChecklistChecklistCategory.id"))
