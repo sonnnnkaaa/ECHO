@@ -23,7 +23,7 @@ class UserProgress(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     is_completed: Mapped[bool] = mapped_column()
-    completed_at: Optional[Mapped[datetime]] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
+    completed_at: Mapped[Optional[datetime]] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     user_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
     item_id: Mapped[int] = mapped_column(ForeignKey("ChecklistItem.id"))
     post_id: Mapped[int] = mapped_column(ForeignKey("Post.id"))

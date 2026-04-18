@@ -35,6 +35,10 @@ class UserToken(BaseModel):
     user: UserResponse
 
 
+class TokenData(BaseModel):
+    user_id: int
+
+
 class PasswordChange(BaseModel):
     old_password: str
     new_password: str

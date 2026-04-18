@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine
-from models import *
-from config import Config
+from src.db_models import Base
+from src.core import settings
 
 
-DB_URL = Config.DB_URL
+DB_URL = settings.DB_URL
 engine = create_engine(DB_URL, echo=True)
 
 

@@ -10,7 +10,7 @@ class ChecklistChecklistCategory(Base):
     Columns:
         id: Identifier of the checklist and category connection (PRIMARY KEY, UNIQUE, NOT NULL)
         checklist_id: Checklist identifier (NOT NULL)
-        checklist_category_id: Checklist category identifier
+        checklist_category_id: Checklist category identifier (NOT NULL)
     """
     __tablename__ = "checklist_checklist_category"
 

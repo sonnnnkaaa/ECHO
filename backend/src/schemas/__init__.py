@@ -6,8 +6,15 @@ from .favorite import FavoriteCreate, FavoriteListResponse
 from .like import LikeCreate, LikeResponse, LikeListResponse
 from .post import PostCreate, PostResponse, PostUpdate, PostListResponse
 from .user_progress import UserProgressCreate, UserProgressResponse, UserProgressListResponse
-from .user import UserCreate, UserResponse, UserUpdate, UserLogin, UserToken
+from .user import UserCreate, UserResponse, UserUpdate, UserLogin, UserToken, TokenData, PasswordChange
 
 
-__all__ = ["ChecklistCategory", "ChecklistItem", "Checklist", "Comment", 
-           "Favorite", "Like", "Post", "UserProgress", "User"]
+__all__ = ["ChecklistCategoryCreate", "ChecklistCategoryResponse", "ChecklistCategoryUpdate",
+           "ChecklistItemCreate", "ChecklistItemResponse", "ChecklistItemUpdate", "ChecklistItemListResponse",
+           "ChecklistCreate", "ChecklistResponse", "ChecklistUpdate", "ChecklistListResponse",
+           "CommentCreate", "CommentResponse", "CommentUpdate", "CommentListResponse",
+           "FavoriteCreate", "FavoriteListResponse",
+           "LikeCreate", "LikeResponse", "LikeListResponse",
+           "PostCreate", "PostResponse", "PostUpdate", "PostListResponse",
+           "UserProgressCreate", "UserProgressResponse", "UserProgressListResponse",
+           "UserCreate", "UserResponse", "UserUpdate", "UserLogin", "UserToken", "TokenData", "PasswordChange"]
