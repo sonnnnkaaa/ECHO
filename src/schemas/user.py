@@ -14,7 +14,6 @@ class UserResponse(BaseModel):
     email: EmailStr
     username: str
     created_at: datetime
-    is_active: bool
     avatar_url: Optional[AnyUrl] = None
     class Config:
         from_attributes = True
