@@ -1,8 +1,8 @@
 //
 //  Item.swift
-//  FeedOfMoments
+//  BucketApp
 //
-//  Created by Анна Кудряшова on 09.04.2026.
+//  Created by Анна Кудряшова on 24.05.2026.
 //
 
 import Foundation
