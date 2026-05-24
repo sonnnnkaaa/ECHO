@@ -2,8 +2,8 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    DB_URL: str = "some_db_url"
-    SECRET_KEY: str = "your-secret-key-change-in-production"
+    DB_URL: str
+    SECRET_KEY: str
     TOKEN_ALGORITHM: str = "HS256"
     PASS_SCHEMES: list = ["pbkdf2_sha512", "md5_crypt"]
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
