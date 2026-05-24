@@ -9,13 +9,13 @@ class CommentCreate(BaseModel):
 
 class CommentResponse(BaseModel):
     id: int
-    content: str
+    text: str
     post_id: int
     author_id: int
-    author_name: str
-    author_avatar: Optional[AnyUrl] = None
     created_at: datetime
     updated_at: Optional[datetime] = None
+    class Config:
+        from_attributes = True
 
 
 class CommentUpdate(BaseModel):

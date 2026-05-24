@@ -18,6 +18,8 @@ class UserProgressResponse(BaseModel):
     checklist_id: int
     is_completed: bool
     completed_at: Optional[datetime] = None
+    class Config:
+        from_attributes = True
 
 
 class UserProgressListResponse(BaseModel):

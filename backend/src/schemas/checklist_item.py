@@ -12,10 +12,8 @@ class ChecklistItemResponse(BaseModel):
     description: str
     order_number: int
     checklist_id: int
-    checklist_title: str
-    created_at: datetime
-    updated_at: Optional[datetime] = None
-
+    class Config:
+        from_attributes = True
 
 class ChecklistItemUpdate(BaseModel):
     description: str

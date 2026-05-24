@@ -9,12 +9,13 @@ class ChecklistCreate(BaseModel):
     title: str
     description: str
     image_url: Optional[AnyUrl]
+    categories: List[str] = []
 
 
 class ChecklistResponse(BaseModel):
     id: int
     title: str
-    categories: List[str]
+    categories: List[ChecklistCategoryResponse]
     description: str
     image_url: Optional[AnyUrl]
     author_id: int
@@ -23,15 +24,17 @@ class ChecklistResponse(BaseModel):
     items: List["ChecklistItemResponse"] # когда будет дописан класс 
     created_at: datetime
     updated_at: Optional[datetime]
+    class Config:
+        from_attributes = True
 
 class ChecklistUpdate(BaseModel):
     title: Optional[str] = None
     image_url: Optional[AnyUrl] = None
-    categories: Optional[List["ChecklistCategoryResponse"]] = None
+    categories: Optional[List[str]] = None
 
 
 class ChecklistListResponse(BaseModel):
-    checklists: List[str]
+    checklists: List[ChecklistResponse]
     total: int
     page: int
     size: int

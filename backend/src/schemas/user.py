@@ -16,6 +16,8 @@ class UserResponse(BaseModel):
     created_at: datetime
     is_active: bool
     avatar_url: Optional[AnyUrl] = None
+    class Config:
+        from_attributes = True
 
 
 class UserUpdate(BaseModel):
@@ -31,6 +33,7 @@ class UserLogin(BaseModel):
 
 class UserToken(BaseModel):
     access_token: str
+    refresh_token: str
     token_type: str = "bearer"
     user: UserResponse
 

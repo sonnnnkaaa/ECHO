@@ -6,21 +6,20 @@ from typing import Optional, List
 class PostCreate(BaseModel):
     description: str
     image_url: AnyUrl
+    item_id: int
 
 
 class PostResponse(BaseModel):
     id: int
     image_url: AnyUrl
     item_id: int
-    item_name: str
-    checklist_id: int
-    checklist_name: str
-    author_id: int
-    author_name: str
+    user_id: int
     likes_count: int
     comments_count: int
     created_at: datetime
     updated_at: Optional[datetime] = None
+    class Config:
+        from_attributes = True
 
 
 class PostUpdate(BaseModel):

@@ -13,10 +13,12 @@ class LikeResponse(BaseModel):
     post_url: AnyUrl
     author_name: str
     created_at: datetime
+    class Config:
+        from_attributes = True
 
 
 class LikeListResponse(BaseModel):
-    likes: List["LikeListResponse"] 
+    likes: List["LikeResponse"] 
     total: int
     page: int
     size: int
