@@ -27,5 +27,5 @@ class User(Base):
     username: Mapped[str] = mapped_column(String(30), unique=True)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     email: Mapped[str] = mapped_column(String(), unique=True)
-    avatar_url: Optional[Mapped[str]] = mapped_column(String())
+    avatar_url: Mapped[Optional[str]] = mapped_column(String())
     password_hash: Mapped[str] = mapped_column(PasswordType(schemes=settings.PASS_SCHEMES))
