@@ -2,7 +2,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import TIMESTAMP, func, ForeignKey
 from typing import Optional, List
 from datetime import datetime
-from .checklist_category import ChecklistCategory
 from .base import Base
 
 class Checklist(Base):
