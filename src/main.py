@@ -12,7 +12,7 @@ async def lifespan(app: FastAPI):
     create_db_and_tables()
     yield
 
-app = FastAPI(title="App", version="1.0.0")
+app = FastAPI(title="App", version="1.0.0", lifespan=lifespan)
 
 app.include_router(auth.router)
 app.include_router(checklist_item.router)
