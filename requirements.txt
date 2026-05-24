@@ -46,3 +46,4 @@ urllib3==2.6.3
 uvicorn[standard]
 psycopg2-binary
 python-multipart
+bcrypt
