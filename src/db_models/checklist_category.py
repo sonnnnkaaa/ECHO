@@ -2,7 +2,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import TIMESTAMP, func
 from datetime import datetime
 from typing import List
-from .checklist import Checklist
 from .base import Base
 
 
