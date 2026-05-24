@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
+from sqlalchemy import ForeignKey
 from .base import Base
 
 
@@ -15,5 +16,5 @@ class ChecklistChecklistCategory(Base):
     __tablename__ = "checklist_checklist_category"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    checklist_id: Mapped[int] = mapped_column()
-    checklist_category_id: Mapped[int] = mapped_column()
+    checklist_id: Mapped[int] = mapped_column(ForeignKey("checklist.id"))
+    checklist_category_id: Mapped[int] = mapped_column(ForeignKey("checklist_category.id"))

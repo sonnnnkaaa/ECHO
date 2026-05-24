@@ -29,5 +29,5 @@ class Post(Base):
     likes_count: Mapped[int] = mapped_column()
     comments_count: Mapped[int] = mapped_column()
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    user_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
-    item_id: Mapped[int] = mapped_column(ForeignKey("ChecklistItem.id"))
+    user_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
+    item_id: Mapped[int] = mapped_column(ForeignKey("checklist_item.id"))

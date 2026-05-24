@@ -19,4 +19,4 @@ class ChecklistItem(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     description: Mapped[str] = mapped_column()
     order_number: Mapped[int] = mapped_column()
-    checklist_id: Mapped[int] = mapped_column(ForeignKey("Checklist.id")) 
+    checklist_id: Mapped[int] = mapped_column(ForeignKey("checklist.id")) 

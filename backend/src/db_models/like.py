@@ -20,5 +20,5 @@ class Like(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    post_id: Mapped[int] = mapped_column(ForeignKey("Post.id"))
-    user_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
+    post_id: Mapped[int] = mapped_column(ForeignKey("post.id"))
+    user_id: Mapped[int] = mapped_column(ForeignKey("user.id"))

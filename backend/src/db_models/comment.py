@@ -22,5 +22,5 @@ class Comment(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     text: Mapped[str] = mapped_column()
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    post_id: Mapped[int] = mapped_column(ForeignKey("Post.id"))
-    author_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
+    post_id: Mapped[int] = mapped_column(ForeignKey("post.id"))
+    author_id: Mapped[int] = mapped_column(ForeignKey("user.id"))

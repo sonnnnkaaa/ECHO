@@ -1,11 +1,9 @@
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy import TIMESTAMP, func
-from sqlalchemy import ForeignKey
-from typing import Optional
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import TIMESTAMP, func, ForeignKey
+from typing import Optional, List
 from datetime import datetime
+from .checklist_category import ChecklistCategory
 from .base import Base
-
 
 class Checklist(Base):
     """
@@ -24,8 +22,12 @@ class Checklist(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(unique=True)
-    saves_count: Mapped[int] = mapped_column()
+    saves_count: Mapped[int] = mapped_column(default=0)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     description: Mapped[Optional[str]] = mapped_column()
-    author_id: Mapped[int] = mapped_column(ForeignKey("User.id"))
-    checklist_checklist_category_id: Mapped[int] = mapped_column(ForeignKey("ChecklistChecklistCategory.id"))
+    author_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
+
+    categories: Mapped[List["ChecklistCategory"]] = relationship(
+        secondary="checklist_checklist_category",
+        back_populates="checklists")
+    
