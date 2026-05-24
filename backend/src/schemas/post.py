@@ -1,6 +1,6 @@
 from pydantic import BaseModel, AnyUrl
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 
 class PostCreate(BaseModel):
@@ -28,7 +28,7 @@ class PostUpdate(BaseModel):
 
 
 class PostListResponse(BaseModel):
-    posts: list[PostResponse]
+    posts: List["PostResponse"]
     total: int
     page: int
     size: int

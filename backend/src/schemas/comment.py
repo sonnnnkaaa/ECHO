@@ -1,6 +1,6 @@
 from pydantic import BaseModel, AnyUrl
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 
 class CommentCreate(BaseModel):
@@ -23,7 +23,7 @@ class CommentUpdate(BaseModel):
 
 
 class CommentListResponse(BaseModel):
-    comments: list[CommentResponse]
+    comments: List["CommentResponse"]
     total: int
     page: int
     size: int

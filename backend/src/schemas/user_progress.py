@@ -1,6 +1,6 @@
 from pydantic import BaseModel, AnyUrl
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 
 class UserProgressCreate(BaseModel):
@@ -21,7 +21,7 @@ class UserProgressResponse(BaseModel):
 
 
 class UserProgressListResponse(BaseModel):
-    user_progress_list: list[UserProgressResponse]
+    user_progress_list: List["UserProgressResponse"]
     total: int
     page: int
     size: int

@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 
 class ChecklistItemCreate(BaseModel):
@@ -22,7 +22,7 @@ class ChecklistItemUpdate(BaseModel):
 
 
 class ChecklistItemListResponse(BaseModel):
-    checklist_items: list[ChecklistItemResponse]
+    checklist_items: List["ChecklistItemResponse"]
     total: int
     page: int
     size: int

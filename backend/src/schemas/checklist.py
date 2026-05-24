@@ -1,6 +1,6 @@
 from pydantic import BaseModel, AnyUrl
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 from .checklist_item import ChecklistItemResponse
 from .checklist_category import ChecklistCategoryResponse
 
@@ -14,24 +14,24 @@ class ChecklistCreate(BaseModel):
 class ChecklistResponse(BaseModel):
     id: int
     title: str
-    categories: list[str]
+    categories: List[str]
     description: str
     image_url: Optional[AnyUrl]
     author_id: int
     author_name: str
     saves_count: int
-    items = list[ChecklistItemResponse] = None # когда будет дописан класс 
+    items: List["ChecklistItemResponse"] # когда будет дописан класс 
     created_at: datetime
     updated_at: Optional[datetime]
 
 class ChecklistUpdate(BaseModel):
     title: Optional[str] = None
     image_url: Optional[AnyUrl] = None
-    categories: list[ChecklistCategoryResponse]
+    categories: Optional[List["ChecklistCategoryResponse"]] = None
 
 
 class ChecklistListResponse(BaseModel):
-    checklists: list[str]
+    checklists: List[str]
     total: int
     page: int
     size: int

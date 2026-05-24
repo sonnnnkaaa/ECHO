@@ -1,6 +1,6 @@
 from pydantic import BaseModel, AnyUrl
 from datetime import datetime
-from .like import LikeListResponse
+from typing import List
 
 
 class LikeCreate(BaseModel):
@@ -16,7 +16,7 @@ class LikeResponse(BaseModel):
 
 
 class LikeListResponse(BaseModel):
-    likes: list[LikeListResponse] 
+    likes: List["LikeListResponse"] 
     total: int
     page: int
     size: int
