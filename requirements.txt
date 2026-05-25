@@ -47,3 +47,7 @@ uvicorn[standard]
 psycopg2-binary
 python-multipart
 bcrypt
+pytest
+httpx
+aiosqlite
+pytest-html
