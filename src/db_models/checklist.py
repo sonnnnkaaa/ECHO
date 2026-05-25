@@ -20,7 +20,7 @@ class Checklist(Base):
     __tablename__ = "checklist"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(unique=True)
+    title: Mapped[str] = mapped_column()
     saves_count: Mapped[int] = mapped_column(default=0)
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     description: Mapped[Optional[str]] = mapped_column()
