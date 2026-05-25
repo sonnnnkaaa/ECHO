@@ -19,11 +19,8 @@ class ChecklistResponse(BaseModel):
     description: str
     image_url: Optional[AnyUrl]
     author_id: int
-    author_name: str
     saves_count: int
-    items: List["ChecklistItemResponse"] # когда будет дописан класс 
     created_at: datetime
-    updated_at: Optional[datetime]
     class Config:
         from_attributes = True
 
