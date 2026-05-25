@@ -25,7 +25,7 @@ class Checklist(Base):
     created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
     description: Mapped[Optional[str]] = mapped_column()
     author_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
-
+    image_url: Mapped[Optional[str]] = mapped_column()
     categories: Mapped[List["ChecklistCategory"]] = relationship(
         secondary="checklist_checklist_category",
         back_populates="checklists")
