@@ -8,7 +8,7 @@ from .checklist_category import ChecklistCategoryResponse
 class ChecklistCreate(BaseModel):
     title: str
     description: str
-    image_url: Optional[AnyUrl]
+    image_url: Optional[AnyUrl] = None
     categories: List[str] = []
 
 
